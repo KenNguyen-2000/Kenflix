@@ -14,7 +14,7 @@ import { API_KEY, base_img_url, BASE_URL, fetchData } from '../../api/request';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo, faPlay } from '@fortawesome/free-solid-svg-icons';
 import MovieSection from '../../components/MovieSection/MovieSection';
-import { Button, Footer } from '../../components';
+import { Button } from '../../components';
 import MovieDetail from '../../components/MovieDetail/MovieDetail';
 import YouTube from 'react-youtube';
 import { useDispatch, useSelector } from 'react-redux';
@@ -171,8 +171,6 @@ const HomePage = () => {
             </MovieListContainer>
           </>
         )}
-
-        <Footer />
       </Wrapper>
     </>
   );
