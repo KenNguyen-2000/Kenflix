@@ -1,0 +1,22 @@
+name: CodeSeer Dependencymap Workflow
+run-name: CodeSeer Bot installs dependencymap workflow
+on: [push, workflow_dispatch]
+jobs:
+  Generate-dependencymap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Generate dependencymap
+        uses: magim-io/generate-map@v0.1.33
+        with:
+          map-kind: dependencymap
+      - name: Upload generated dependencymap
+        uses: magim-io/upload-map@v0.1.6
+        with:
+          map-name: magim-dependencymap
+          repository: ${{ github.repository }}
